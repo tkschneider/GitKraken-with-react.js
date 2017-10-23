@@ -3,19 +3,37 @@
   <head>
     <meta charset="UTF-8" />
     <title>Hello World</title>
+	<link rel='stylesheet' href='css/bootstrap.min.css' />
     <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
     <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
     <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
   </head>
   <body>
-    <div id="root"></div>
+    <div id="hello"></div>
     <script type="text/babel">
+	
+	function tick() {
+		const user = { firstName: 'Tim', lastName: 'Schneider'};
+		const element = (
+		<div>
+		<h1>Hello, {formatName(user)}!</h1>
+		<h2>It is {new Date().toLocaleTimeString()}.</h2>
+		<button type="button" class="btn btn-primary">Primary</button>
+		</div>
+		);	
+			
+		function formatName(user){
+			return user.firstName + ' ' + user.lastName;
+		}
 
-      ReactDOM.render(
-        <h1>Hello, world!</h1>,
-        document.getElementById('root')
-      );
+		  ReactDOM.render(
+			element,
+			document.getElementById('hello')
+		  );
 
+	  }
+	  
+	  setInterval(tick, 1000);
     </script>
   </body>
 </html>
