@@ -15,10 +15,12 @@
 	function tick() {
 		const user = { firstName: 'Tim', lastName: 'Schneider'};
 		const element = (
-		<div>
-		<h1>Hello, {formatName(user)}!</h1>
-		<h2>It is {new Date().toLocaleTimeString()}.</h2>
-		<button type="button" class="btn btn-primary">Primary</button>
+		<div class='row'>
+			<div class='col-md-8 col-lg-8 col-sm-8 pull-right'>
+			<h1>Hello, {formatName(user)}!</h1>
+			<h2>It is {new Date().toLocaleTimeString()}.</h2>
+			<button type="button" class="btn btn-primary">Primary</button>
+			</div>
 		</div>
 		);	
 			
